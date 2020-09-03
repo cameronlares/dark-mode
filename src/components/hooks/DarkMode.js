@@ -3,14 +3,14 @@ import {useLocalStorage} from './useLocalStorage'
 
 export const useDarkMode = (initialValue) => {
 const [mode, setMode] = useLocalStorage(initialValue)
-const target = document.querySelector('body')
+const body = document.querySelector('body')
 useEffect(()=>{
     if(mode){
-        target.classList.add('dark-mode')
+        body.classList.add('dark-mode')
     } else {
-        target.classList.remove('dark-mode')
+        body.classList.remove('dark-mode')
     }
-}, [mode,target])
+}, [mode,body])
 
     return [mode, setMode]
 }
